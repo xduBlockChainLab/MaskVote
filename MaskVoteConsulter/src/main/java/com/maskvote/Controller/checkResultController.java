@@ -107,6 +107,10 @@ public class checkResultController {
         return "electResultSearch";
     }
 
+    @GetMapping("voteResultSearch")
+    public String voteResultSearch(){
 
+        return "voteResultSearch";
+    }
 
 }

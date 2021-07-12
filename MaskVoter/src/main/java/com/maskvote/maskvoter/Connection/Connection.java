@@ -48,11 +48,11 @@ public class Connection {
             PrivateKey privateKey = getPrivateKey(Paths.get(privateKeyPath));
 
             Wallet wallet = Wallets.newInMemoryWallet();
-            wallet.put("user2", Identities.newX509Identity("Org2MSP", certificate, privateKey));
+            wallet.put("user1", Identities.newX509Identity("Org2MSP", certificate, privateKey));
 
             //根据connection.json 获取Fabric网络连接对象
             Gateway.Builder builder = Gateway.createBuilder()
-                    .identity(wallet, "user2")
+                    .identity(wallet, "user1")
                     .networkConfig(Paths.get(networkConfigPath));
             //连接网关
             Gateway gateway = builder.connect();
