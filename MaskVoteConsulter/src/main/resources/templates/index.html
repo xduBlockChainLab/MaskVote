@@ -13,7 +13,7 @@
     <div class="layui-layout layui-layout-admin">
 
         <div class="layui-header">
-            <div class="layui-logo layui-hide-xs layui-bg-black"><img th:src="@{/images/xdlr-logo.png}" class="layui-nav-img">匿名投票</div>
+            <div class="layui-logo layui-hide-xs layui-bg-black"><img th:src="@{/images/xdlr-logo.png}" class="layui-nav-img">MaskVote</div>
             <!-- 头部区域（可配合layui 已有的水平导航） -->
             <ul class="layui-nav layui-layout-left">
                 <!-- 移动端显示 -->
@@ -36,18 +36,18 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                     <a href="javascript:;">
-                        <img th:src="@{/images/user-avatar.png}" class="layui-nav-img"><span th:text="${session.counter}"></span></a>
+                        <img th:src="@{/images/user-avatar.png}" class="layui-nav-img"><span th:text="consulter"></span></a>
                     <dl class="layui-nav-child">
                         <!-- <dd><a href="">Your Profile</a></dd>
                         <dd><a href="">Settings</a></dd> -->
                         <dd><a th:href="@{/login}">Sign out</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                    <a href="javascript:;">
-                        <i class="layui-icon layui-icon-more-vertical"></i>
-                    </a>
-                </li>
+<!--                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>-->
+<!--                    <a href="javascript:;">-->
+<!--                        <i class="layui-icon layui-icon-more-vertical"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
             </ul>
         </div>
 
