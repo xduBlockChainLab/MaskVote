@@ -21,6 +21,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 @CrossOrigin
 public class IndexController {
+    public static boolean flagOfRegister = false;
 
     @GetMapping(value = {"/", "login"})
     public String loginPage(){
@@ -67,11 +68,14 @@ public class IndexController {
         /**
          * 去管理员注册
          */
-
-        String str = Register.register("voterRegister");
-        System.out.println(str);
+        if(flagOfRegister) {
+            String str = Register.register("voterRegister");
+            System.out.println(str);
 //        model.addAttribute("zhucema", str);
-        return str;
+            return str;
+        }else {
+            return "联合公钥未上传，不允许注册，请稍等片刻后再来注册";
+        }
     }
 
     @RequestMapping("/startUpload")

@@ -2,6 +2,7 @@ package com.maskvote.maskvotecounter.Controller;
 
 import com.maskvote.maskvotecounter.Connection.Connection;
 import com.maskvote.maskvotecounter.Connection.QueryUPK;
+import com.maskvote.maskvotecounter.SocketNet.BlockVoter;
 import com.maskvote.maskvotecounter.SocketNet.Login;
 import com.maskvote.maskvotecounter.SocketNet.Register;
 import org.springframework.stereotype.Controller;
@@ -70,6 +71,10 @@ public class IndexController {
         System.out.println(str);
 //        model.addAttribute("zhucema", str);
 //        return "lxq";
+        //添加判断
+        if(str.contains("3")){
+            BlockVoter.flagOfRegister = true;
+        }
         return str;
     }
 
