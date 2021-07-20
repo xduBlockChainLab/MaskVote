@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>计票员页面</title>
+    <title>主办方主页</title>
     <link rel="stylesheet" th:href="@{/css/layui.css}">
     <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
@@ -13,7 +13,7 @@
     <div class="layui-layout layui-layout-admin">
 
         <div class="layui-header">
-            <div class="layui-logo layui-hide-xs layui-bg-black"><img th:src="@{/images/xdlr-logo.png}" class="layui-nav-img">匿名投票</div>
+            <div class="layui-logo layui-hide-xs layui-bg-black"><img th:src="@{/images/xdlr-logo.png}" class="layui-nav-img">MaskVote</div>
             <!-- 头部区域（可配合layui 已有的水平导航） -->
             <ul class="layui-nav layui-layout-left">
                 <!-- 移动端显示 -->
@@ -36,18 +36,18 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                     <a href="javascript:;">
-                        <img th:src="@{/images/user-avatar.png}" class="layui-nav-img"><span th:text="${session.counter}"></span></a>
+                        <img th:src="@{/images/user-avatar.png}" class="layui-nav-img"><span th:text="consulter"></span></a>
                     <dl class="layui-nav-child">
                         <!-- <dd><a href="">Your Profile</a></dd>
                         <dd><a href="">Settings</a></dd> -->
                         <dd><a th:href="@{/login}">Sign out</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                    <a href="javascript:;">
-                        <i class="layui-icon layui-icon-more-vertical"></i>
-                    </a>
-                </li>
+<!--                <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>-->
+<!--                    <a href="javascript:;">-->
+<!--                        <i class="layui-icon layui-icon-more-vertical"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
             </ul>
         </div>
 
@@ -56,10 +56,10 @@
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
                     <li class="layui-nav-item">
-                        <a href="javascripe:;" target="main_self_frame">进行计票</a>
+                        <a href="javascripe:;" target="main_self_frame">事务提交</a>
                         <dl class="layui-nav-child">
-                            <dd><a th:href="@{electSearch}" target="main_self_frame">选举事务</a></dd>
-                            <dd><a th:href="@{voteSearch}" target="main_self_frame">表决事务</a></dd>
+                            <dd><a th:href="@{electAffair.html}" target="main_self_frame">选举事务</a></dd>
+                            <dd><a th:href="@{voteAffair.html}" target="main_self_frame">表决事务</a></dd>
                         </dl>
                     </li>  
                     <li class="layui-nav-item">
@@ -76,7 +76,7 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <!-- <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div> -->
-            <iframe src="electSearch" name="main_self_frame" frameborder="0" class="body-iframe"></iframe>
+            <iframe src="electAffair.html" name="main_self_frame" frameborder="0" class="body-iframe"></iframe>
         </div>
 
         <!-- 底部固定区域 -->
